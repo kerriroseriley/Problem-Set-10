@@ -48,11 +48,11 @@ names(states_sf)
 names(counties_sf)
 names(opiates)
 
-# Match election data to state geometries
+# Match election data to state geometries with join
 states_map <- states_sf %>%
   left_join(election24, by = "fips")
 
-# Match county data to election data for Map 2
+# Match county data to election data for Map 2 with join
 county_map <- counties_sf %>%
   left_join(election24_county_df, by = "fips")
 
@@ -115,15 +115,14 @@ map2
 map3 <- ggplot(counties_sf) +
   geom_sf(aes(fill = pop_dens), color = NA) +
   scale_fill_viridis_c(
-    option = "plasma",        # Brighter, higher-contrast palette than magma
-    trans = "log10",          # Log scale dramatically improves rural/urban contrast
-    labels = comma,           # Formats legend numbers with commas (e.g., 1,000, 10,000)
+    option = "plasma",
+    trans = "log10",
+    labels = comma,
     na.value = "gray90",
-    name = "Pop. Density\n(per sq. mi.)"
+    name = "Pop Density\n(per square mile)"
   ) +
   labs(
-    title = "Population Density by County",
-    subtitle = "Logarithmic scale highlighting both rural and urban distribution"
+    title = "Population Density by County"
   ) +
   theme_void() +
   theme(
@@ -139,17 +138,16 @@ counties_sf <- counties_sf %>%
 
 map4 <- ggplot(counties_sf) +
   geom_sf(aes(fill = black_pct), 
-          color = "gray90",       # Adds subtle county borders so individual counties are visible
-          linewidth = 0.04) +     # Keeps borders extremely thin and clean
+          color = "gray90",
+          linewidth = 0.04) + 
   scale_fill_viridis_c(
-    option = "plasma",          # Or try "cividis" or "mako" for a different look
+    option = "plasma",
     labels = function(x) paste0(x, "%"), # Appends % sign to legend numbers
     na.value = "gray90",
     name = "% Black"
   ) +
   labs(
-    title = "Percentage Black by County",
-    subtitle = "Geographic distribution across U.S. counties"
+    title = "Percentage Black by County"
   ) +
   theme_void() +
   theme(
@@ -232,7 +230,6 @@ map6 <- ggplot(states_map_2026) +
   )
 map6
 
-
 # 2024 Presidential Margin by state (Harris % minus Trump %)
 pres_2024_margin <- election24 %>%
   mutate(
@@ -283,16 +280,15 @@ map7 <- ggplot(swing_map_data) +
           color = "white",
           linewidth = 0.2) +
   scale_fill_gradient2(
-    low = "#C43C39",      # Shift toward Republican
-    mid = "white",        # No shift
-    high = "#3568A8",     # Shift toward Democrat
+    low = "#C43C39", # Shift toward Republican
+    mid = "white", # No shift
+    high = "#3568A8", # Shift toward Democrat
     midpoint = 0,
-    na.value = "gray90",  # States without a 2026 Senate race
+    na.value = "gray90", # States without a 2026 Senate race
     name = "Margin Shift (%)"
   ) +
   labs(
-    title = "2026 Senate Election Swing from 2024 Presidential Race",
-    subtitle = "Positive values indicate a Democratic shift; negative values indicate a Republican shift"
+    title = "2026 Senate Election Swing from 2024 Presidential Race"
   ) +
   theme_void() +
   theme(
@@ -316,8 +312,7 @@ map8 <- ggplot(swing_map_data) +
     name = "Margin Shift (%)"
   ) +
   labs(
-    title = "2026 Gubernatorial Election Swing from 2024 Presidential Race",
-    subtitle = "Positive values indicate a Democratic shift; negative values indicate a Republican shift"
+    title = "2026 Gubernatorial Election Swing from 2024 Presidential Race"
   ) +
   theme_void() +
   theme(
