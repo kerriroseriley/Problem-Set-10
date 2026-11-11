@@ -39,4 +39,6 @@ Plot the (rough) location of Syracuse University on a national state map in a bi
 ![map11](map11.png){fig-align="center" width="70%"}
 
 ![map12](map12.png){fig-align="center" width="70%"}
+## Summary
+
 
