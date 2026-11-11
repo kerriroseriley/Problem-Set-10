@@ -37,15 +37,26 @@ data("states_sf")
 # Load county geographic data
 data("counties_sf")
 
+# Load county data 
+data("election24_county_df")
+
+# Load opiates data
+data("opiates")
+
+
 # Examine your datasets
 View(election24)
 View(states_sf)
 View(counties_sf)
+View(election24_county_df)
+View(opiates)
+
 
 # See all variable names
 names(election24)
 names(states_sf)
 names(counties_sf)
+names(opiates)
 
 
 # Match election data to state geometries
