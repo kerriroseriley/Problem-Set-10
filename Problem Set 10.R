@@ -339,8 +339,7 @@ map9 <- ggplot() +
           size = 6, 
           stroke = 1.5) +
   labs(
-    title = "Map 9: Location of Syracuse University",
-    subtitle = "National United States map indicating Syracuse, NY"
+    title = "Location of Syracuse University"
   ) +
   theme_void() +
   theme(
