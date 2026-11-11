@@ -9,9 +9,7 @@ format:
 ## My Data
 For my election data for counties and states, I used the Healy guidelines. 
 
-
-For my showcase graphs, I used the Inpatient Rehbailitation Facility - Provider Data (CSV) published by the Centers for Medicare and Medicaid Services (CMS). 
-
+For my showcase graphs, I used the Inpatient Rehabilitation Facility - Provider Data (CSV) published by the Centers for Medicare and Medicaid Services (CMS). 
 
 
 ## My Maps
@@ -26,27 +24,26 @@ Population Density by County
 ![map3](map3.png){fig-align="center" width="70%"}
 
 % Black by County
-![map5](map5.png){fig-align="center" width="70%"}
+![map4](map4.png){fig-align="center" width="70%"}
 
 2026 Election returns by State (Senate Winner)
-![map6](map6.png){fig-align="center" width="70%"}
+![map5](map5.png){fig-align="center" width="70%"}
 
 2026 Election returns by State (Governor Winner)
-![map7](map7.png){fig-align="center" width="70%"}
+![map6](map6.png){fig-align="center" width="70%"}
 Create maps that show swing (i.e., how much change there was) from the 2024 presidential election to 2026, by state, for:2026 Senate
-![map8](map8.png){fig-align="center" width="70%"}
+![map7](map7.png){fig-align="center" width="70%"}
 
 Create maps that show swing (i.e., how much change there was) from the 2024 presidential election to 2026, by state, for:2026 Senate
-![map9](map9.png){fig-align="center" width="70%"}
+![map8](map8.png){fig-align="center" width="70%"}
 Plot the (rough) location of Syracuse University on a national state map in a big blue or orange star.
-![map10](map10.png){fig-align="center" width="70%"}
+![map9](map9.png){fig-align="center" width="70%"}
 
 ## Showcase
 
 
+![map10](map10.png){fig-align="center" width="70%"}
+This graph shows the geographic distribution of certified inpatient healthcare providers across the United States.Texas stands out dramatically with the highest count (darkest black color, exceeding 120 facilities), followed by California and Florida as major hubs.
+
 ![map11](map11.png){fig-align="center" width="70%"}
-
-![map12](map12.png){fig-align="center" width="70%"}
-## Summary
-
-
+This graph displays average inpatient potentially preventable readmission rates, where lower rates indicate higher quality post-acute care transitions. Several states, such as Kentucky and parts of the Northeast, exhibit the highest readmission rates, colored in deep black (around or exceeding 5%). On the other hand, states like Wyoming and Alaska show lower average readmission rates(around 2%).
