@@ -10,4 +10,4 @@ library(tidyverse)
 setwd("~/Desktop/Current Classes/R/Problem Set 10")
 
 # Load in the data sets
-election <- read_csv("~/Desktop/Current Classes/R/Problem Set 10/Data/.csv")
+election <- read_csv("~/Desktop/Current Classes/R/Problem Set 10/Data/midterms_2026_preliminary.csv")
