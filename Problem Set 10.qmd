@@ -6,11 +6,6 @@ format:
 ---
 
 
-Run this to install eletion
-```{r}
-install.packages(c("socviz", "sf", "statebins", "ggrepel", "maps"))
-```
-
 ## My Maps
 
 2024 Election Winner by State
