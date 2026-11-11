@@ -118,3 +118,24 @@ map4
 
 
 
+
+
+
+
+
+
+
+# Save the figures
+ggsave("map1.png", plot = plot1, width = 8, height = 5, dpi = 300)
+ggsave("map2.png", plot = plot2, width = 8, height = 5, dpi = 300)
+ggsave("map3.png", plot = plot3, width = 8, height = 5, dpi = 300)
+ggsave("map4.png", plot = plot4, width = 8, height = 5, dpi = 300)
+ggsave("map5.png", plot = plot5, width = 8, height = 5, dpi = 300)
+ggsave("map6.png", plot = plot5, width = 8, height = 5, dpi = 300)
+ggsave("map7.png", plot = plot5, width = 8, height = 5, dpi = 300)
+ggsave("map8.png", plot = plot5, width = 8, height = 5, dpi = 300)
+ggsave("map9.png", plot = plot5, width = 8, height = 5, dpi = 300)
+ggsave("map10.png", plot = plot5, width = 8, height = 5, dpi = 300)
+ggsave("map11.png", plot = plot5, width = 8, height = 5, dpi = 300)
+ggsave("map12.png", plot = plot5, width = 8, height = 5, dpi = 300)
+
