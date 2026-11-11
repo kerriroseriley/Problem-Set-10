@@ -1,12 +1,10 @@
 #Title: Problem Set 10
 #Author: Kerri Rose Riley
-#Purpose: To draw a series of maps for the 2024 election using the Healy guidelines
+#Purpose: To draw a series of maps using the Healy guidelines and showcase own research with maps
 #Output: Figures and Quarto Document typeset as a .pdf
 
 # Set the working directory
 setwd("~/Desktop/Current Classes/R/Problem Set 10")
-
-
 
 # Install Packages
 install.packages(c(
@@ -25,28 +23,17 @@ library(sf)     # needed for geom_sf() and the *_sf objects
 library(statebins)  # geom_statebins()
 library(ggrepel)   # geom_label_repel() in the opiates time-series plot
 library(maps) # state outlines
+library(scales) # Needed for squish function if desired
 
-# Load in the data sets
+# Load in the preliminary data set
 election <- read_csv("~/Desktop/Current Classes/R/Problem Set 10/Data/midterms_2026_preliminary.csv")
 
-# Load 2024 election data
+# Load data sets in from Healy guidlines
 data("election24")
-
-# Load state geographic data
 data("states_sf")
-
-# Load county geographic data
 data("counties_sf")
-
-# Load county data 
 data("election24_county_df")
-
-# Load opiates data
 data("opiates")
-
-
-elec <- read_csv("~/Desktop/Current Classes/R/Problem Set 10/Data/midterms_2026_preliminary.csv")
-
 
 # Examine your datasets
 View(election24)
@@ -55,23 +42,19 @@ View(counties_sf)
 View(election24_county_df)
 View(opiates)
 
-
 # See all variable names
 names(election24)
 names(states_sf)
 names(counties_sf)
 names(opiates)
 
-
 # Match election data to state geometries
 states_map <- states_sf %>%
   left_join(election24, by = "fips")
 
-# Match county data to election data
-# Assuming election24 contains state-level election results
-# County election winners require county-level election results.
-
-
+# Match county data to election data for Map 2
+county_map <- counties_sf %>%
+  left_join(election24_county_df, by = "fips")
 
 # Map 1
 map1 <- ggplot(states_map) +
@@ -128,17 +111,26 @@ map2 <- ggplot(county_map) +
   )
 map2
 
-
 # Map 3
 map3 <- ggplot(counties_sf) +
   geom_sf(aes(fill = pop_dens), color = NA) +
   scale_fill_viridis_c(
-    option = "magma",
-    trans = "sqrt",
-    name = "Population density"
+    option = "plasma",        # Brighter, higher-contrast palette than magma
+    trans = "log10",          # Log scale dramatically improves rural/urban contrast
+    labels = comma,           # Formats legend numbers with commas (e.g., 1,000, 10,000)
+    na.value = "gray90",
+    name = "Pop. Density\n(per sq. mi.)"
   ) +
-  labs(title = "Population Density by County") +
-  theme_void()
+  labs(
+    title = "Population Density by County",
+    subtitle = "Logarithmic scale highlighting both rural and urban distribution"
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(size = 15, face = "bold"),
+    plot.subtitle = element_text(size = 10),
+    legend.position = "right"
+  )
 map3
 
 # Map 4
@@ -146,18 +138,28 @@ counties_sf <- counties_sf %>%
   mutate(black_pct = (black / pop) * 100)
 
 map4 <- ggplot(counties_sf) +
-  geom_sf(aes(fill = black_pct), color = NA) +
+  geom_sf(aes(fill = black_pct), 
+          color = "gray90",       # Adds subtle county borders so individual counties are visible
+          linewidth = 0.04) +     # Keeps borders extremely thin and clean
   scale_fill_viridis_c(
-    option = "plasma",
+    option = "plasma",          # Or try "cividis" or "mako" for a different look
+    labels = function(x) paste0(x, "%"), # Appends % sign to legend numbers
+    na.value = "gray90",
     name = "% Black"
   ) +
-  labs(title = "Percentage Black by County") +
-  theme_void()
+  labs(
+    title = "Percentage Black by County",
+    subtitle = "Geographic distribution across U.S. counties"
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(size = 15, face = "bold"),
+    plot.subtitle = element_text(size = 10),
+    legend.position = "right"
+  )
 map4
 
-
 # Map 5: 2026 Senate Winner
-
 # Filter for top vote-getter per state for Senate races
 senate_2026 <- elec %>%
   filter(str_detect(office, "Senate")) %>%
@@ -181,7 +183,6 @@ states_map_2026 <- states_sf %>%
   left_join(senate_2026, by = "fips") %>%
   left_join(gov_2026, by = "fips")
 
-
 map5 <- ggplot(states_map_2026) +
   geom_sf(aes(fill = senate_winner),
           color = "white",
@@ -204,7 +205,6 @@ map5 <- ggplot(states_map_2026) +
     plot.subtitle = element_text(size = 10),
     legend.position = "bottom"
   )
-
 map5
 
 # Map 6: 2026 Governor Winner
@@ -230,13 +230,10 @@ map6 <- ggplot(states_map_2026) +
     plot.subtitle = element_text(size = 10),
     legend.position = "bottom"
   )
-
 map6
 
 
-
-# Recoding
-# 1. 2024 Presidential Margin by state (Harris % minus Trump %)
+# 2024 Presidential Margin by state (Harris % minus Trump %)
 pres_2024_margin <- election24 %>%
   mutate(
     pres_margin_2024 = pct_harris - pct_trump,
@@ -244,7 +241,7 @@ pres_2024_margin <- election24 %>%
   ) %>%
   select(fips, pres_margin_2024)
 
-# 2. 2026 Senate Margin by state (D % minus R %)
+# 2026 Senate Margin by state (D % minus R %)
 senate_2026_margin <- elec %>%
   filter(str_detect(office, "Senate")) %>%
   filter(party %in% c("D", "R")) %>%
@@ -257,7 +254,7 @@ senate_2026_margin <- elec %>%
   ) %>%
   select(fips, senate_margin_2026)
 
-# 3. 2026 Governor Margin by state (D % minus R %)
+# 2026 Governor Margin by state (D % minus R %)
 gov_2026_margin <- elec %>%
   filter(office == "Governor") %>%
   filter(party %in% c("D", "R")) %>%
@@ -270,7 +267,7 @@ gov_2026_margin <- elec %>%
   ) %>%
   select(fips, gov_margin_2026)
 
-# 4. Join to states_sf geometry and calculate Swing
+# Join to states_sf geometry and calculate Swing
 swing_map_data <- states_sf %>%
   left_join(pres_2024_margin, by = "fips") %>%
   left_join(senate_2026_margin, by = "fips") %>%
@@ -303,9 +300,7 @@ map7 <- ggplot(swing_map_data) +
     plot.subtitle = element_text(size = 10),
     legend.position = "bottom"
   )
-
 map7
-
 
 # Map 8: 2026 Governor
 map8 <- ggplot(swing_map_data) +
@@ -330,9 +325,7 @@ map8 <- ggplot(swing_map_data) +
     plot.subtitle = element_text(size = 10),
     legend.position = "bottom"
   )
-
 map8
-
 
 # Get centroid point of New York State directly from states_sf
 ny_centroid <- states_sf %>%
@@ -359,34 +352,84 @@ map9 <- ggplot() +
     plot.title = element_text(size = 15, face = "bold"),
     plot.subtitle = element_text(size = 10)
   )
-
 map9
 
-# https://data.cms.gov/provider-data/dataset/v9e4-nwhh
-# Map 10: 
-inpatient <- read_csv("~/Desktop/Current Classes/R/Problem Set 10/Data/inpatient.csv")
 
+# Showcase Maps
+inpatient <- read_csv("~/Desktop/Current Classes/R/Problem Set 10/Data/Inpatient.csv")
 
+# Map 10: Inpatient Healthcare Facility Distribution by State
+inpatient_summary <- inpatient %>%
+  group_by(State) %>%
+  summarize(facility_count = n_distinct(`CMS Certification Number (CCN)`))
 
-# Map 11: 
-  
-  
+states_map_inpatient <- states_sf %>%
+  left_join(inpatient_summary, by = c("st" = "State"))
 
+map10 <- ggplot(states_map_inpatient) +
+  geom_sf(aes(fill = facility_count),
+          color = "white",
+          linewidth = 0.2) +
+  scale_fill_viridis_c(
+    option = "mako",
+    direction = -1,
+    na.value = "gray90",
+    name = "Total Facilities"
+  ) +
+  labs(
+    title = "CMS Inpatient Rehabilitation Facilities by State",
+    subtitle = "Geographic distribution of certified inpatient healthcare providers"
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(size = 15, face = "bold"),
+    plot.subtitle = element_text(size = 10),
+    legend.position = "bottom"
+  )
+map10
 
+# Map 11: Inpatient Quality Measure (Unadjusted Readmission Rate by State)
+readmission_summary <- inpatient %>%
+  filter(`Measure Code` == "I_018_01_PPR_WI_OBS_RATE") %>%
+  mutate(Score_num = as.numeric(Score)) %>%
+  filter(!is.na(Score_num)) %>%
+  group_by(State) %>%
+  summarize(mean_readm_rate = mean(Score_num, na.rm = TRUE))
 
+states_map_readm <- states_sf %>%
+  left_join(readmission_summary, by = c("st" = "State"))
 
+map11 <- ggplot(states_map_readm) +
+  geom_sf(aes(fill = mean_readm_rate),
+          color = "white",
+          linewidth = 0.2) +
+  scale_fill_viridis_c(
+    option = "mako",             # Changed from "magma" to "mako" for consistency
+    direction = -1,
+    na.value = "gray90",
+    name = "Avg Readmission Rate (%)"
+  ) +
+  labs(
+    title = "Average Inpatient Potentially Preventable Readmission Rate by State",
+    subtitle = "Lower rates indicate higher quality post-acute care transitions"
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(size = 15, face = "bold"),
+    plot.subtitle = element_text(size = 10),
+    legend.position = "bottom"
+  )
+map11
 
 # Save the figures
-ggsave("map1.png", plot = plot1, width = 8, height = 5, dpi = 300)
-ggsave("map2.png", plot = plot2, width = 8, height = 5, dpi = 300)
-ggsave("map3.png", plot = plot3, width = 8, height = 5, dpi = 300)
-ggsave("map4.png", plot = plot4, width = 8, height = 5, dpi = 300)
-ggsave("map5.png", plot = plot5, width = 8, height = 5, dpi = 300)
-ggsave("map6.png", plot = plot5, width = 8, height = 5, dpi = 300)
-ggsave("map7.png", plot = plot5, width = 8, height = 5, dpi = 300)
-ggsave("map8.png", plot = plot5, width = 8, height = 5, dpi = 300)
-ggsave("map9.png", plot = plot5, width = 8, height = 5, dpi = 300)
-ggsave("map10.png", plot = plot5, width = 8, height = 5, dpi = 300)
-ggsave("map11.png", plot = plot5, width = 8, height = 5, dpi = 300)
-ggsave("map12.png", plot = plot5, width = 8, height = 5, dpi = 300)
-
+ggsave("map1.png", plot = map1, width = 8, height = 5, dpi = 300)
+ggsave("map2.png", plot = map2, width = 8, height = 5, dpi = 300)
+ggsave("map3.png", plot = map3, width = 8, height = 5, dpi = 300)
+ggsave("map4.png", plot = map4, width = 8, height = 5, dpi = 300)
+ggsave("map5.png", plot = map5, width = 8, height = 5, dpi = 300)
+ggsave("map6.png", plot = map6, width = 8, height = 5, dpi = 300)
+ggsave("map7.png", plot = map7, width = 8, height = 5, dpi = 300)
+ggsave("map8.png", plot = map8, width = 8, height = 5, dpi = 300)
+ggsave("map9.png", plot = map9, width = 8, height = 5, dpi = 300)
+ggsave("map10.png", plot = map10, width = 8, height = 5, dpi = 300)
+ggsave("map11.png", plot = map11, width = 8, height = 5, dpi = 300)

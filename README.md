@@ -2,8 +2,6 @@
 # PAI741 - Data Wrangling and Visualizations
 # Author: Kerri Rose Riley
 
-
-
 ## Files
 
 - `Problem Set 10.qmd` - Quarto file containing the analysis and written responses

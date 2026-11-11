@@ -6,6 +6,14 @@ format:
 ---
 
 
+## My Data
+For my election data for counties and states, I used the Healy guidelines. 
+
+
+For my showcase graphs, I used the Inpatient Rehbailitation Facility - Provider Data (CSV) published by the Centers for Medicare and Medicaid Services (CMS). 
+
+
+
 ## My Maps
 
 2024 Election Winner by State
