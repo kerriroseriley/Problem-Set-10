@@ -1,0 +1,13 @@
+---
+title: "Problem Set 10"
+author: "Kerri Rose Riley"
+format:
+  pdf: default
+---
+
+
+
+```{r}
+
+```
+
