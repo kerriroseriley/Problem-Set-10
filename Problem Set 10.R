@@ -362,15 +362,15 @@ map9 <- ggplot() +
 
 map9
 
-
+# https://data.cms.gov/provider-data/dataset/v9e4-nwhh
 # Map 10: 
+inpatient <- read_csv("~/Desktop/Current Classes/R/Problem Set 10/Data/inpatient.csv")
+
+
 
 # Map 11: 
   
   
-
-
-
 
 
 
