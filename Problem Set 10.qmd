@@ -7,7 +7,37 @@ format:
 
 
 
-```{r}
+## My Maps
 
-```
+2024 Election Winner by State
+![map1](map1.png){fig-align="center" width="70%"}
+
+2024 Election Winner by County
+![map2](map2.png){fig-align="center" width="70%"}
+
+Population Density by County
+![map3](map3.png){fig-align="center" width="70%"}
+
+% Black by County
+![map5](map5.png){fig-align="center" width="70%"}
+
+2026 Election returns by State (Senate Winner)
+![map6](map6.png){fig-align="center" width="70%"}
+
+2026 Election returns by State (Governor Winner)
+![map7](map7.png){fig-align="center" width="70%"}
+Create maps that show swing (i.e., how much change there was) from the 2024 presidential election to 2026, by state, for:2026 Senate
+![map8](map8.png){fig-align="center" width="70%"}
+
+Create maps that show swing (i.e., how much change there was) from the 2024 presidential election to 2026, by state, for:2026 Senate
+![map9](map9.png){fig-align="center" width="70%"}
+Plot the (rough) location of Syracuse University on a national state map in a big blue or orange star.
+![map10](map10.png){fig-align="center" width="70%"}
+
+## Showcase
+
+
+![map11](map11.png){fig-align="center" width="70%"}
+
+![map12](map12.png){fig-align="center" width="70%"}
 
