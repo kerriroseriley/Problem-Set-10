@@ -1,0 +1,123 @@
+state,state_abbr,state_fips,office,candidate,party,incumbent,votes,vote_pct,total_votes,pct_reporting
+Alabama,AL,01,U.S. Senate,Barry Moore,R,N,917347,54.71,,98.66
+Alabama,AL,01,U.S. Senate,Everett Wess,D,N,759336,45.29,,98.66
+Alaska,AK,02,U.S. Senate,Mary Peltola,D,N,102701,48.18,,74.29
+Alaska,AK,02,U.S. Senate,Dan Sullivan,R,Y,102075,47.88,,74.29
+Alaska,AK,02,U.S. Senate,Gerald Heikes,R,N,4821,2.26,,74.29
+Alaska,AK,02,U.S. Senate,Daniel Sullivan,O,N,3583,1.68,,74.29
+Arkansas,AR,05,U.S. Senate,,,,,,,
+Colorado,CO,08,U.S. Senate,John Hickenlooper,D,Y,1310937,60.24,,
+Colorado,CO,08,U.S. Senate,Mark Baisley,R,N,773936,35.56,,
+Delaware,DE,10,U.S. Senate,,,,,,,
+Florida,FL,12,U.S. Senate (special),Ashley Moody,R,Y,4207947,50.87,,99
+Florida,FL,12,U.S. Senate (special),Angie Nixon,D,N,3969186,47.99,,99
+Georgia,GA,13,U.S. Senate,Jon Ossoff,D,Y,,59.0,,99
+Georgia,GA,13,U.S. Senate,Mike Collins,R,N,,41.0,,99
+Idaho,ID,16,U.S. Senate,Jim Risch,R,Y,401284,56.52,,
+Idaho,ID,16,U.S. Senate,Todd Achilles,I,N,238232,33.55,,
+Illinois,IL,17,U.S. Senate,,,,,,,
+Iowa,IA,19,U.S. Senate,Josh Turek,D,N,,50.5,,
+Iowa,IA,19,U.S. Senate,Ashley Hinson,R,N,,46.4,,
+Kansas,KS,20,U.S. Senate,Adam Hamilton,D,N,,50.93,,98.31
+Kansas,KS,20,U.S. Senate,Roger Marshall,R,Y,,46.1,,98.31
+Kentucky,KY,21,U.S. Senate,,,,,,,
+Louisiana,LA,22,U.S. Senate,Julia Letlow,R,N,745963,50.88,,
+Louisiana,LA,22,U.S. Senate,Jamie Davis,D,N,720106,49.12,,
+Maine,ME,23,U.S. Senate,Troy Jackson,D,N,,53.5,,
+Maine,ME,23,U.S. Senate,Susan Collins,R,Y,,46.4,,
+Massachusetts,MA,25,U.S. Senate,,,,,,,
+Michigan,MI,26,U.S. Senate,Abdul El-Sayed,D,N,,52.5,,
+Michigan,MI,26,U.S. Senate,Mike Rogers,R,N,,45.5,,
+Minnesota,MN,27,U.S. Senate,Peggy Flanagan,D,N,,53.71,,100
+Minnesota,MN,27,U.S. Senate,Michele Tafoya,R,N,,43.55,,100
+Minnesota,MN,27,U.S. Senate,Marisa Simonetti,I,N,,1.47,,100
+Minnesota,MN,27,U.S. Senate,Rebecca Whiting,L,N,,1.15,,100
+Mississippi,MS,28,U.S. Senate,Scott Colom,D,N,,48.9,,95.6
+Mississippi,MS,28,U.S. Senate,Cindy Hyde-Smith,R,Y,,48.9,,95.6
+Montana,MT,30,U.S. Senate,Kurt Alme,R,N,223086,48.78,,
+Montana,MT,30,U.S. Senate,Seth Bodnar,I,N,170948,37.38,,
+Nebraska,NE,31,U.S. Senate,Pete Ricketts,R,Y,,50.4,,
+New Hampshire,NH,33,U.S. Senate,Chris Pappas,D,N,337283,56.08,,92.01
+New Hampshire,NH,33,U.S. Senate,John Sununu,R,N,252909,42.05,,92.01
+New Jersey,NJ,34,U.S. Senate,,,,,,,
+New Mexico,NM,35,U.S. Senate,,,,,,,
+North Carolina,NC,37,U.S. Senate,Roy Cooper,D,N,2467963,58.72,,
+North Carolina,NC,37,U.S. Senate,Michael Whatley,R,N,1643088,39.09,,
+Ohio,OH,39,U.S. Senate (special),Sherrod Brown,D,N,2301042,50.01,,98
+Ohio,OH,39,U.S. Senate (special),Jon Husted,R,Y,2077748,45.15,,98
+Oklahoma,OK,40,U.S. Senate,Kevin Hern,R,N,639510,57.2,,
+Oklahoma,OK,40,U.S. Senate,N'Kiyla Thomas,D,N,439109,39.28,,
+Oregon,OR,41,U.S. Senate,Jeff Merkley,D,Y,864411,56.57,,
+Oregon,OR,41,U.S. Senate,David Smith,R,N,619239,40.53,,
+Rhode Island,RI,44,U.S. Senate,,,,,,,
+South Carolina,SC,45,U.S. Senate,Annie Andrews,D,N,,51.1,,
+South Carolina,SC,45,U.S. Senate,Lindsey Graham,R,Y,,46.7,,
+South Dakota,SD,46,U.S. Senate,,,,,,,
+Tennessee,TN,47,U.S. Senate,,,,,,,
+Texas,TX,48,U.S. Senate,James Talarico,D,N,,55.08,,99
+Texas,TX,48,U.S. Senate,Ken Paxton,R,N,,43.0,,99
+Virginia,VA,51,U.S. Senate,,,,,,,
+West Virginia,WV,54,U.S. Senate,,,,,,,
+Wyoming,WY,56,U.S. Senate,,,,,,,
+Alabama,AL,01,Governor,Thomas Tuberville,R,N,872445,52.06,,98.72
+Alabama,AL,01,Governor,Doug Jones,D,N,803468,47.94,,98.72
+Alaska,AK,02,Governor,Jonathan Kreiss-Tomkins,D,N,103610,49.15,,73.89
+Alaska,AK,02,Governor,Bernadette Wilson,R,N,61566,29.21,,73.89
+Alaska,AK,02,Governor,Dave Bronson,R,N,29900,14.18,,73.89
+Alaska,AK,02,Governor,Treg Taylor,R,N,15713,7.45,,73.89
+Arizona,AZ,04,Governor,Katie Hobbs,D,Y,,55.6,,83.5
+Arizona,AZ,04,Governor,Andy Biggs,R,N,,42.7,,83.5
+Arkansas,AR,05,Governor,Fred Love,D,N,,38.6,,99.0
+Arkansas,AR,05,Governor,Sarah Huckabee Sanders,R,Y,,53.9,,99.0
+California,CA,06,Governor,Xavier Becerra,D,N,,64.0,7787355,59.3
+California,CA,06,Governor,Steve Hilton,R,N,,36.0,7787355,59.3
+Colorado,CO,08,Governor,Phil Weiser,D,N,,60.9,,76.9
+Colorado,CO,08,Governor,Victor Marx,R,N,,33.7,,76.9
+Connecticut,CT,09,Governor,Ned Lamont,D,Y,,58.9,,95.8
+Connecticut,CT,09,Governor,Ryan Fazio,R,N,,41.1,,95.8
+Florida,FL,12,Governor,Byron Donalds,R,N,4132275,50.0,,99
+Florida,FL,12,Governor,David Jolly,D,N,4024554,48.7,,99
+Georgia,GA,13,Governor,Keisha Lance Bottoms,D,N,,54.3,4180225,99.0
+Georgia,GA,13,Governor,Rick Jackson,R,N,,45.7,4180225,99.0
+Hawaii,HI,15,Governor,Josh Green,D,Y,,73.4,,89.3
+Hawaii,HI,15,Governor,Gary Cordery,R,N,,26.6,,89.3
+Idaho,ID,16,Governor,,,,,,,
+Illinois,IL,17,Governor,JB Pritzker,D,Y,,59.9,3912526,91
+Illinois,IL,17,Governor,Darren Bailey,R,N,,36.8,3912526,91
+Illinois,IL,17,Governor,Collin Corbett,I,N,,3.3,3912526,91
+Iowa,IA,19,Governor,Rob Sand,D,N,,55.5,,
+Iowa,IA,19,Governor,Zach Lahn,R,N,,44.5,,
+Kansas,KS,20,Governor,,,,,,,
+Maine,ME,23,Governor,,,,,,,
+Maryland,MD,24,Governor,,,,,,,
+Massachusetts,MA,25,Governor,,,,,,,
+Michigan,MI,26,Governor,Jocelyn Benson,D,N,,54.5,,
+Michigan,MI,26,Governor,John James,R,N,,43.8,,
+Minnesota,MN,27,Governor,Amy Klobuchar,D,N,,55.47,,100
+Minnesota,MN,27,Governor,Lisa Demuth,R,N,,42.63,,100
+Minnesota,MN,27,Governor,Steven Young,G,N,,1.82,,100
+Nebraska,NE,31,Governor,,,,,,,
+Nevada,NV,32,Governor,Aaron Ford,D,N,,51.7,,
+Nevada,NV,32,Governor,Joseph Lombardo,R,Y,,44.2,,
+New Hampshire,NH,33,Governor,,,,,,,
+New Mexico,NM,35,Governor,,,,,,,
+New York,NY,36,Governor,,,,,,,
+Ohio,OH,39,Governor,Amy Acton,D,N,,52.3,,
+Ohio,OH,39,Governor,Vivek Ramaswamy,R,N,,44.4,,
+Oklahoma,OK,40,Governor,,,,,,,
+Oregon,OR,41,Governor,Tina Kotek,D,Y,,51.7,1537836,
+Oregon,OR,41,Governor,Christine Drazan,R,N,,45.5,1537836,
+Oregon,OR,41,Governor,Brett Smith,I,N,,2.6,1537836,
+Pennsylvania,PA,42,Governor,Josh Shapiro,D,Y,,60.4,,
+Pennsylvania,PA,42,Governor,Stacy Garrity,R,N,,38.3,,
+Rhode Island,RI,44,Governor,,,,,,,
+South Carolina,SC,45,Governor,,,,,,,
+South Dakota,SD,46,Governor,,,,,,,
+Tennessee,TN,47,Governor,,,,,,,
+Texas,TX,48,Governor,Gina Hinojosa,D,N,,52.8,9903952,
+Texas,TX,48,Governor,Greg Abbott,R,Y,,45.7,9903952,
+Texas,TX,48,Governor,Pat Dixon,L,N,,1.5,9903952,
+Vermont,VT,50,Governor,,,,,,,
+Wisconsin,WI,55,Governor,David Crowley,D,N,,54.1,,
+Wisconsin,WI,55,Governor,Tom Tiffany,R,N,,45.9,,
+Wyoming,WY,56,Governor,,,,,,,
