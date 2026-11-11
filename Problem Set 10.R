@@ -334,7 +334,33 @@ map8 <- ggplot(swing_map_data) +
 map8
 
 
-# Map 9: Plot the (rough) location of Syracuse University on a national state map in a big blue or orange star.
+# Get centroid point of New York State directly from states_sf
+ny_centroid <- states_sf %>%
+  filter(fips == "36" | st == "NY" | state == "New York") %>%
+  st_centroid()
+
+# Draw Map 9
+map9 <- ggplot() +
+  geom_sf(data = states_sf, 
+          fill = "gray95", 
+          color = "white", 
+          linewidth = 0.2) +
+  geom_sf(data = ny_centroid, 
+          color = "#D96B27", 
+          shape = 8, 
+          size = 6, 
+          stroke = 1.5) +
+  labs(
+    title = "Map 9: Location of Syracuse University",
+    subtitle = "National United States map indicating Syracuse, NY"
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(size = 15, face = "bold"),
+    plot.subtitle = element_text(size = 10)
+  )
+
+map9
 
 
 # Map 10: 
